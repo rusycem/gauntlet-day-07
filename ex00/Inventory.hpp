@@ -1,6 +1,6 @@
 #pragma once
-
 #include <string>
+#include <vector>
 
 class Inventory {
 public:
@@ -8,4 +8,7 @@ public:
     void remove(const std::string& item);   // absent item: no-op, cycle 4 proves it
     bool has(const std::string& item) const;
     int  count() const;
+
+private:
+std::vector<std::string> m_items; //vector container for items
 };
