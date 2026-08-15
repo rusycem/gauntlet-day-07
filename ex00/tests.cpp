@@ -14,3 +14,11 @@ TEST_CASE("a new inventory starts empty") {
     REQUIRE(inv.count() == 0);       // REQUIRE aborts the case; the line below is meaningless if this fails
     CHECK_FALSE(inv.has("potion"));  // CHECK reports and continues
 }
+
+TEST_CASE("removing an item drops the count and has() stops finding it") {
+    Inventory inv;
+    inv.add("potion");
+    inv.remove("potion");
+    CHECK(inv.count() == 0);          // Assertion 1
+    CHECK_FALSE(inv.has("potion"));   // Assertion 2
+}
