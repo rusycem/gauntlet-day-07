@@ -10,3 +10,9 @@ int  Inventory::count() const
 {
     return m_items.size();
 }
+
+bool Inventory::has(const std::string& item) const
+{
+    (void)item;
+    return false; //need to return bool
+}
